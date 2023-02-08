@@ -1,6 +1,7 @@
 extends Area2D
 
 var speed = 20
+var color = Color.red
 
 func _ready():
 	$Sprite.play("idle")
@@ -16,4 +17,4 @@ func get_input():
 		move_local_y(speed)
 
 func _on_Bar_area_entered(area):
-	if area.is_in_group("BALLS"): area.bounce()
+	if area.is_in_group("BALLS"): area.bounce(self)
