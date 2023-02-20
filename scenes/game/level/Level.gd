@@ -1,17 +1,17 @@
 extends Node2D
 
+var p1
+var p2
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var ball = preload("res://scenes/game/ball/Ball.tscn")
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$Bar1.color = Color.red
-	$Bar2.color = Color.greenyellow
+	p1 = Player.new(-1800,Color.red)
+	p2 = Player.new(1800,Color.greenyellow)
+	add_child(p1)
+	add_child(p2)
+	new_ball()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func new_ball():
+	var b = ball.instance()
+	add_child(b)

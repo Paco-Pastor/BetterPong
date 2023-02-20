@@ -6,6 +6,9 @@ var color = Color.red
 func _ready():
 	$Sprite.play("idle")
 
+func test(string = "a"):
+	print(string)
+
 func _physics_process(_delta):
 	get_input()
 	position.y = clamp(position.y,-1000,1000)

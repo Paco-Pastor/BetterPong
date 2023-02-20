@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/game/ball/BallParticles.gd" type="Script" id=1]
+
+[sub_resource type="Gradient" id=4]
+resource_local_to_scene = true
+offsets = PoolRealArray( 0, 0.782609, 0.993789, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=5]
+resource_local_to_scene = true
+gradient = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+resource_local_to_scene = true
+lifetime_randomness = 1.0
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 500.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 55.0
+scale_random = 1.0
+color_ramp = SubResource( 5 )
+
+[node name="BallParticles" type="Particles2D"]
+amount = 200
+lifetime = 0.7
+preprocess = 1.0
+speed_scale = 0.2
+visibility_rect = Rect2( -5000, -5000, 10000, 10000 )
+local_coords = false
+draw_order = 1
+process_material = SubResource( 6 )
+script = ExtResource( 1 )

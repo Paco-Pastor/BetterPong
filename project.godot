@@ -8,11 +8,37 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scenes/entities/player/Player.gd"
+}, {
+"base": "Node2D",
+"class": "Score",
+"language": "GDScript",
+"path": "res://scenes/game/score/Score.gd"
+}, {
+"base": "Area2D",
+"class": "scoreArea",
+"language": "GDScript",
+"path": "res://scenes/game/score/ScoreArea.gd"
+} ]
+_global_script_class_icons={
+"Player": "",
+"Score": "",
+"scoreArea": ""
+}
+
 [application]
 
 config/name="Better Pong"
 run/main_scene="res://scenes/game/level/Level.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Game="*res://scenes/autoload/Game.gd"
 
 [physics]
 
@@ -20,4 +46,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
